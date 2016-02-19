@@ -1,0 +1,53 @@
+﻿{
+"name": "numbers",
+"content": [{
+"photos": "file:///android_asset/numbers/0.png",
+"signature": "Ноль",
+"sounds": "file:///android_asset/numbers/0.wav"
+},
+{
+"photos": "file:///android_asset/numbers/1.png",
+"signature": "Один",
+"sounds": "file:///android_asset/numbers/1.wav"
+},
+{
+"photos": "file:///android_asset/numbers/2.png",
+"signature": "Два",
+"sounds": "file:///android_asset/numbers/2.wav"
+},
+{
+"photos": "file:///android_asset/numbers/3.png",
+"signature": "Три",
+"sounds": "file:///android_asset/numbers/3.wav"
+},
+{
+"photos": "file:///android_asset/numbers/4.png",
+"signature": "Четыре",
+"sounds": "file:///android_asset/numbers/4.wav"
+},
+{
+"photos": "file:///android_asset/numbers/5.png",
+"signature": "Пять",
+"sounds": "file:///android_asset/numbers/5.wav"
+},
+{
+"photos": "file:///android_asset/numbers/6.png",
+"signature": "Шесть",
+"sounds": "file:///android_asset/numbers/6.wav"
+},
+{
+"photos": "file:///android_asset/numbers/7.png",
+"signature": "Семь",
+"sounds": "file:///android_asset/numbers/7.wav"
+},
+{
+"photos": "file:///android_asset/numbers/8.png",
+"signature": "Восемь",
+"sounds": "file:///android_asset/numbers/8.wav"
+},
+{
+"photos": "file:///android_asset/numbers/9.png",
+"signature": "Девять",
+"sounds": "file:///android_asset/numbers/9.wav"
+}
+]}

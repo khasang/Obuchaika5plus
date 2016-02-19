@@ -1,0 +1,113 @@
+﻿{
+"name": "shapes",
+"content": [{
+"photos": "file:///android_asset/shapes/1.png",
+"signature": "Квадрат",
+"sounds": "file:///android_asset/shapes/1.wav"
+},
+{
+"photos": "file:///android_asset/shapes/2.png",
+"signature": "Прямоугольник",
+"sounds": "file:///android_asset/shapes/2.wav"
+},
+{
+"photos": "file:///android_asset/shapes/3.png",
+"signature": "Треугольник",
+"sounds": "file:///android_asset/shapes/3.wav"
+},
+{
+"photos": "file:///android_asset/shapes/4.png",
+"signature": "Круг",
+"sounds": "file:///android_asset/shapes/4.wav"
+},
+{
+"photos": "file:///android_asset/shapes/5.png",
+"signature": "Овал",
+"sounds": "file:///android_asset/shapes/5.wav"
+},
+{
+"photos": "file:///android_asset/shapes/6.png",
+"signature": "Полукруг",
+"sounds": "file:///android_asset/shapes/6.wav"
+},
+{
+"photos": "file:///android_asset/shapes/7.png",
+"signature": "Четырехугольник",
+"sounds": "file:///android_asset/shapes/7.wav"
+},
+{
+"photos": "file:///android_asset/shapes/8.png",
+"signature": "Ромб",
+"sounds": "file:///android_asset/shapes/8.wav"
+},
+{
+"photos": "file:///android_asset/shapes/9.png",
+"signature": "Параллелограмм",
+"sounds": "file:///android_asset/shapes/9.wav"
+},
+{
+"photos": "file:///android_asset/shapes/10.png",
+"signature": "Пятиугольник",
+"sounds": "file:///android_asset/shapes/10.wav"
+},
+{
+"photos": "file:///android_asset/shapes/11.png",
+"signature": "Шестиугольник",
+"sounds": "file:///android_asset/shapes/11.wav"
+},
+{
+"photos": "file:///android_asset/shapes/12.png",
+"signature": "Восьмиугольник",
+"sounds": "file:///android_asset/shapes/12.wav"
+},
+{
+"photos": "file:///android_asset/shapes/13.png",
+"signature": "Кольцо",
+"sounds": "file:///android_asset/shapes/13.wav"
+},
+{
+"photos": "file:///android_asset/shapes/14.png",
+"signature": "Месяц",
+"sounds": "file:///android_asset/shapes/14.wav"
+},
+{
+"photos": "file:///android_asset/shapes/15.png",
+"signature": "Звезда",
+"sounds": "file:///android_asset/shapes/15.wav"
+},
+{
+"photos": "file:///android_asset/shapes/16.png",
+"signature": "Сердце",
+"sounds": "file:///android_asset/shapes/16.wav"
+},
+{
+"photos": "file:///android_asset/shapes/17.png",
+"signature": "Куб",
+"sounds": "file:///android_asset/shapes/17.wav"
+},
+{
+"photos": "file:///android_asset/shapes/18.png",
+"signature": "Цилиндр",
+"sounds": "file:///android_asset/shapes/18.wav"
+},
+{
+"photos": "file:///android_asset/shapes/19.png",
+"signature": "Шар",
+"sounds": "file:///android_asset/shapes/19.wav"
+},
+{
+"photos": "file:///android_asset/shapes/20.png",
+"signature": "Параллелепипед",
+"sounds": "file:///android_asset/shapes/20.wav"
+},
+{
+"photos": "file:///android_asset/shapes/21.png",
+"signature": "Конус",
+"sounds": "file:///android_asset/shapes/21.wav"
+},
+{
+"photos": "file:///android_asset/shapes/22.png",
+"signature": "Пирамида",
+"sounds": "file:///android_asset/shapes/22.wav"
+}
+]}

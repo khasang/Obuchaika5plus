@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Obuchaika</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">diplom</string>
+    <string name="Numbers">Цифры</string>
+    <string name="Words">Буквы</string>
+    <string name="Shapes">Фигуры</string>
+    <string name="dlg_btn_cancel">Нет</string>
+    <string name="dlg_btn_ok">Да</string>
+    <string name="dlg_msg">Вы точно хотите выйти?</string>
 </resources>
