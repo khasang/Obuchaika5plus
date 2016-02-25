@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +20,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 
 public class Fragment_menu extends Fragment {
@@ -27,8 +30,6 @@ public class Fragment_menu extends Fragment {
             "com.just_app.diplom.item1";
     private ImageView nameImage;
     private Subject mSubject;
-    private Drawable drawableView;
-    private Button forward, back;
     private TextView tv;
     private String mName;
     private MediaPlayer mp;
@@ -36,7 +37,7 @@ public class Fragment_menu extends Fragment {
     private AssetManager mgr;
     private ObjectMapper mapper;
     private String mItem;
-
+    final String TAG = "myLogs";
 
     public static Fragment_menu newInstance(String item) {
         Bundle args = new Bundle();
@@ -51,28 +52,44 @@ public class Fragment_menu extends Fragment {
         super.onCreate(savedInstanceState);
         mItem = (String) getArguments().
                 getSerializable(EXTRA_ITEM);
-        mgr = getActivity().getAssets();
-        mapper = new ObjectMapper();
+        LoadMediaTask loadMediaTask = new LoadMediaTask();
+        loadMediaTask.execute(mItem);
         try {
-            InputStream inputStream;
-            inputStream = mgr.open(mItem);
-            mSubject = mapper.readValue(inputStream, Subject.class);
-            inputStream.close();
-        } catch (IOException e) {
+            mSubject=loadMediaTask.get();
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
+
+    class LoadMediaTask extends AsyncTask<String,String,Subject>{
+
+        @Override
+        protected Subject doInBackground(String... params) {
+            mgr = getActivity().getAssets();
+            mapper = new ObjectMapper();
+            try {
+
+                InputStream inputStream;
+                inputStream = mgr.open(mItem);
+                mSubject = mapper.readValue(inputStream, Subject.class);
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return mSubject;
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup v =(ViewGroup) inflater.inflate(
                 R.layout.fragment_menu, container, false);
         mp = new MediaPlayer();
-        forward = (Button) v.findViewById(R.id.forward);
-        back = (Button) v.findViewById(R.id.back);
+        Button forward = (Button) v.findViewById(R.id.forward);
+       Button back = (Button) v.findViewById(R.id.back);
         nameImage = (ImageView) v.findViewById(R.id.name_image);
         tv = (TextView) v.findViewById(R.id.tv);
-
         OnChangePhoto();
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -102,23 +119,21 @@ public class Fragment_menu extends Fragment {
     }
 
     public  void OnChangePhoto() {
-
         mgr = getActivity().getAssets();
         if (mSubject.content != null) {
             try {
                 Uri imgUri = Uri.parse(mSubject.content.get(i).photos);
-                Uri soundUri = Uri.parse(mSubject.content.get(i).sounds);
-                mName = mSubject.content.get(i).signature;
-
-                String sound2 = soundUri.getPath().substring("/android_asset/".length());
-
                 InputStream stream = mgr.open(
                         imgUri.getPath().substring("/android_asset/".length())
                 );
-                drawableView = Drawable.createFromStream(stream, null);
-
+                Drawable drawableView = Drawable.createFromStream(stream, null);
                 nameImage.setImageDrawable(drawableView);
+
+                mName = mSubject.content.get(i).signature;
                 tv.setText(mName);
+
+                Uri soundUri = Uri.parse(mSubject.content.get(i).sounds);
+                String sound2 = soundUri.getPath().substring("/android_asset/".length());
 
                 if (sound2 != null) {
 
@@ -131,7 +146,6 @@ public class Fragment_menu extends Fragment {
                 stream.close();
             } catch (IOException e) {
                 e.printStackTrace();
-                Log.d("sound error", "sound error");
             }
         }
     }

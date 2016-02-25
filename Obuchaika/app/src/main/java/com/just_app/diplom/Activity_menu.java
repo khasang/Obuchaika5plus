@@ -13,3 +13,5 @@ public class Activity_menu extends SingleFragmentActivity{
         return Fragment_menu.newInstance(item);
     }
 }
+
+
